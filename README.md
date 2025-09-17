@@ -1,5 +1,5 @@
 # djangocv
-Converts CV/Resume with Django using templates and HTML
+Converts CV/Resume with Django using templates and HTML. Two main files will be found inside CV folder: views.py and inside the templates folder is rishik_cv.html
 
 Steps:
 1. Pull Code
