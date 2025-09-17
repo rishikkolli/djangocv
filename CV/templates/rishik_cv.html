@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1 style="text-align: center;">{{ first_name }} {{ last_name }}</h1>
+    <div style="text-align: center;">
+        <span> {{ city_state }} </span> •
+        <span> {{ phone_number }} </span> •
+        <span> {{ email }} </span> •
+        <span> {{ linkedin }} </span>
+    </div>
+    <h3>{{ sections.0 }}</h3>
+    <hr style="margin-top: -1%;">
+    <div>
+        {% for education in educations %}
+         <div style="display: flex; justify-content: space-between;">
+             <span><strong>{{ education.name }}</strong></span> <span><strong>{{ education.location }}</strong></span>
+         </div>
+        <div style="display: flex; justify-content: space-between;">
+            <span>{{ education.degree }}</span> <span><i>{{ education.date }}</i></span>
+        </div>
+        {% endfor %}
+    </div>
+    <h3>{{ sections.1 }}</h3>
+    <hr style="margin-top: -1%;">
+    <div>
+        {% for experience in experiences %}
+        <div>
+            <div style="display: flex; justify-content: space-between;">
+                <span><strong>{{ experience.company }}</strong></span> <span><strong>{{ experience.city }}</strong></span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <span><i>{{ experience.position }}</i></span> <span><i>{{ experience.date }}</i></span>
+            </div>
+            <div>
+                <ul>
+                    {% for bullet_point in experience.bullet_points %}
+                        <li>{{ bullet_point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h3>{{ sections.2 }}</h3>
+    <hr style="margin-top: -1%;">
+    <div>
+        {% for project_experience in project_experiences %}
+        <div>
+            <div style="display: flex; justify-content: space-between;">
+                <span><strong>{{ project_experience.name }}</strong></span> <span><i>{{ project_experience.date }}</i></span>
+            </div>
+            <div>
+                <ul>
+                    {% for bullet_point in project_experience.bullet_points %}
+                        <li>{{ bullet_point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h3>{{ sections.3 }}</h3>
+    <hr style="margin-top: -1%;">
+    <div>
+        <div>
+            <span><strong>{{ skills_section.0 }}</strong></span><span>{{ skills.programming_languages }}</span>
+        </div>
+        <div>
+            <span><strong>{{ skills_section.1 }}</strong></span><span>{{ skills.os_database_cloud_tools }}</span>
+        </div>
+        <div>
+            <span><strong>{{ skills_section.2 }}</strong></span><span>{{ skills.skills }}</span>
+        </div>
+    </div>
+</body>
+</html>
